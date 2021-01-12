@@ -1,5 +1,6 @@
 from tkinter import *
 from Organizer import *
+from tkinter import ttk
 from functools import partial
 
 
@@ -16,18 +17,22 @@ def check():
 
 
 root = Tk()
-var = StringVar(root, "1")
-R1 = Radiobutton(root, text="All", variable=var, value="All")
-R1.pack(anchor=W)
+default = StringVar()
+custom = StringVar()
 
-R2 = Radiobutton(root, text="Audios", variable=var, value="Audios")
-R2.pack(anchor=W)
 
-R3 = Radiobutton(root, text="Videos", variable=var, value="Videos")
-R3.pack(anchor=W)
-
-R4 = Radiobutton(root, text="Documents", variable=var, value="Docs")
-R4.pack(anchor=W)
+# var = StringVar(root, "1")
+# R1 = Radiobutton(root, text="All", variable=var, value="All")
+# R1.pack(anchor=W)
+#
+# R2 = Radiobutton(root, text="Audios", variable=var, value="Audios")
+# R2.pack(anchor=W)
+#
+# R3 = Radiobutton(root, text="Videos", variable=var, value="Videos")
+# R3.pack(anchor=W)
+#
+# R4 = Radiobutton(root, text="Documents", variable=var, value="Docs")
+# R4.pack(anchor=W)
 
 
 # code engine & GUI linkage
