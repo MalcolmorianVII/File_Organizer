@@ -1,6 +1,7 @@
 from tkinter import *
 from Organizer import *
 from tkinter import ttk
+from tkinter import filedialog
 from functools import partial
 
 
@@ -15,8 +16,9 @@ from functools import partial
 #     else:
 #         docs(doc_files)
 
-# def display():
-#     aggregator()
+def display():
+    cur_dir = filedialog.askdirectory()
+    aggregator(cur_dir)
 
 root = Tk()
 root.title("File Organize")
@@ -42,7 +44,7 @@ mainframe.rowconfigure(0, weight=1)
 # R_docs.grid(column=5, row=7, sticky=E)
 
 # code engine & GUI linkage
-Organize = Button(mainframe, text="Organize", command=aggregator)
+Organize = Button(mainframe, text="Organize", command=display)
 Organize.grid(column=5, row=9, sticky=(W, E))
 
 root.mainloop()

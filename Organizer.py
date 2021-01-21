@@ -29,10 +29,11 @@ pics = [".png", ".gif", ".svg", "jpeg", "tiff"]
 
 # file aggregator : mainly for recursive purpose in case subfolders
 
-def aggregator():
-    """Total file compiler in  a particular folder to facilitate the move to appropriate destination"""
-    cur_dir = os.getcwd()
-    cur_files = os.listdir()
+def aggregator(cur_dir):
+    """Total file compiler in  a particular folder to facilitate the move to appropriate destination
+    :param *args:
+    """
+    cur_files = os.listdir(cur_dir)
     # getting the files to move
     vid_files = [file for file in cur_files if os.path.splitext(file)[1] in vid_json]
     aud_files = [file for file in cur_files if os.path.splitext(file)[1] in aud_json]
@@ -48,8 +49,8 @@ def aggregator():
         for folder in folders:
             try:
                 os.chdir(os.path.join(cur_dir, folder))
-                # cur_files = os.listdir(cur_dir)
-                aggregator()
+                new_dir = os.getcwd()
+                aggregator(new_dir)
             except NotADirectoryError:
                 continue
 
