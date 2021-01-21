@@ -66,4 +66,5 @@ def aggregator(cur_dir):
                 print("Directory is empty!!!")
 
 
-# aggregator()
+if __name__ == "__main__":
+    aggregator()
