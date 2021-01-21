@@ -54,16 +54,16 @@ def aggregator(cur_dir):
             except NotADirectoryError:
                 continue
 
-    print(cur_dir + ":" + str(cur_files))
-    # destination = {f'{vid_files}': f'{vid_source}', f'{aud_files}': f'{aud_source}', f'{doc_files}': f'{doc_source}'
-    #     , f'{pic_files}': f'{pics_source}'}
-    #
-    # for files in destination:
-    #     for file in files:
-    #         try:
-    #             shutil.move(f'{cur_dir}/{file}', destination[files])
-    #         except shutil.Error:
-    #             print("Directory is empty!!!")
+    # print(cur_dir + ":" + str(cur_files))
+    destination = {f'{vid_files}': f'{vid_source}', f'{aud_files}': f'{aud_source}', f'{doc_files}': f'{doc_source}'
+        , f'{pic_files}': f'{pics_source}'}
+
+    for files in destination:
+        for file in files:
+            try:
+                shutil.move(f'{cur_dir}/{file}', destination[files])
+            except shutil.Error:
+                print("Directory is empty!!!")
 
 
 # aggregator()
